@@ -8,7 +8,7 @@ export const POST = async (request: Request) => {
   const payload = {
     email: process.env.EZQ42_EMAIL,
     payload: {
-      url: `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/run`,
+      url: `http://app-r8sgoo4:3000/api/run`,
       method: "POST",
       body: {
         name,
