@@ -3,12 +3,14 @@ export const dynamic = "force-dynamic"; // defaults to auto
 export const POST = async (request: Request) => {
   const body = await request.json();
   const count = body.count || 1;
+  const concurrency = body.concurrency || 1;
 
   const payloads = [];
   for (let i = 0; i < count; i++) {
     const name = `Name ${i}`;
     payloads.push({
       email: process.env.EZQ42_EMAIL,
+      concurrency,
       payload: {
         url: `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/run`,
         method: "POST",
