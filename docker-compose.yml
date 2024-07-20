@@ -2,6 +2,7 @@ version: "3"
 services:
   ezq42example:
     build: .
+    network_mode: host
     environment:
       - "EZQ42_EMAIL=${EZQ42_EMAIL}"
       - "EZQ42_URL=${EZQ42_URL}"
