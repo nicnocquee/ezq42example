@@ -4,6 +4,7 @@ export const POST = async (request: Request) => {
   const body = await request.json();
   const count = body.count || 1;
   const namePrefix = body.name || "Name";
+  const delay = body.delay || 100000;
   const concurrency = body.concurrency || 1;
 
   const payloads = [];
@@ -18,6 +19,7 @@ export const POST = async (request: Request) => {
         method: "POST",
         body: {
           name,
+          delay,
           date: new Date().toISOString(),
         },
       },

@@ -4,6 +4,7 @@ export const POST = async (request: Request) => {
   const body = await request.json();
   const name = body.name;
   const date = body.date;
+  const delay = body.delay || 100000;
   console.log(
     "Job received at " +
       new Date().toISOString() +
@@ -13,7 +14,7 @@ export const POST = async (request: Request) => {
       date
   );
 
-  await new Promise((resolve) => setTimeout(resolve, 10000));
+  await new Promise((resolve) => setTimeout(resolve, delay));
   return new Response("ok", {
     status: 200,
   });
