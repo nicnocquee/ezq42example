@@ -6,6 +6,7 @@ services:
       - "EZQ42_EMAIL=${EZQ42_EMAIL}"
       - "EZQ42_URL=${EZQ42_URL}"
       - "NEXT_PUBLIC_VERCEL_URL=${NEXT_PUBLIC_VERCEL_URL}"
+      - "EZQ42_SECRET_KEY=${EZQ42_SECRET_KEY}"
     healthcheck:
       test: curl --fail http://localhost:3000/health || exit 1
       interval: 60s

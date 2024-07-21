@@ -11,6 +11,7 @@ export const POST = async (request: Request) => {
     const name = `${namePrefix} ${i}`;
     payloads.push({
       email: process.env.EZQ42_EMAIL,
+      secretKey: process.env.EZQ42_SECRET_KEY,
       concurrency,
       payload: {
         url: `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/run`,
