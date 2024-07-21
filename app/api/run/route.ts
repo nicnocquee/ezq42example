@@ -13,7 +13,7 @@ export const POST = async (request: Request) => {
       date
   );
 
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 10000));
   return new Response("ok", {
     status: 200,
   });
