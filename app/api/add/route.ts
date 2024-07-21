@@ -3,11 +3,12 @@ export const dynamic = "force-dynamic"; // defaults to auto
 export const POST = async (request: Request) => {
   const body = await request.json();
   const count = body.count || 1;
+  const namePrefix = body.name || "Name";
   const concurrency = body.concurrency || 1;
 
   const payloads = [];
   for (let i = 0; i < count; i++) {
-    const name = `Name ${i}`;
+    const name = `${namePrefix} ${i}`;
     payloads.push({
       email: process.env.EZQ42_EMAIL,
       concurrency,
