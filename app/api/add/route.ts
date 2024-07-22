@@ -28,8 +28,8 @@ export const POST = async (request: Request) => {
 
   const responses = await Promise.all(
     payloads.map(async (payload) => {
-      console.log(`Sending job to ${payload.payload.url}`);
       const url = `${process.env.EZQ42_URL}/api/v1/job`;
+      console.log(`Sending job to ${url}`);
       const response = await fetch(url, {
         method: "POST",
         headers: {
